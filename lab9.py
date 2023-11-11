@@ -20,7 +20,7 @@ def generate_sensor_data():
 #         json_data = '[' + ',\n'.join(json.dumps(record) for record in data) + ']'
 #         file.write(json_data)
 
-conf = {
+conf = { #configuración de kafka
     'bootstrap.servers': '157.245.244.105:9092',
     'client.id': 'sensor-data-producer'
 }
@@ -43,7 +43,7 @@ def produce_sensor_data(interval):
         producer.flush()
 
 producer = Producer(conf)
-produce_sensor_data(15)
+produce_sensor_data(15)#cambiar si se desea más de 15 segundos o menos
 
 
 
